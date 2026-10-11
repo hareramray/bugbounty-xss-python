@@ -1,5 +1,13 @@
 # bugbounty-xss-python
 
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/hareramray)
+![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![Playwright Chromium](https://img.shields.io/badge/Playwright-Chromium-2EAD33)
+![Tests with pytest](https://img.shields.io/badge/Tests-pytest-0A9EDC?logo=pytest&logoColor=white)
+![Authorized testing only](https://img.shields.io/badge/Use-Authorized_testing_only-blue)
+
+[Report a bug](https://github.com/hareramray/bugbounty-xss-python/issues/new?labels=bug) · [Request a feature](https://github.com/hareramray/bugbounty-xss-python/issues/new?labels=enhancement)
+
 A Python 3.11+ toolkit for scoped, authorized XSS testing. It injects harmless random markers and uses Playwright Chromium to distinguish execution from reflection. Use it only on targets and workflows for which you have permission. The included practice application and automated tests use loopback fixtures.
 
 ## Install
@@ -181,3 +189,7 @@ The tests use local HTTP fixtures and never target a public application. Browser
 This is bounded testing, not exhaustive XSS coverage. It does not crawl, discover inputs, brute force contexts, solve authentication challenges, generate dynamic CSRF tokens for raw POSTs, test every encoding/parser/browser, or exercise arbitrary user gestures and application state. Nested JSON fields, file uploads, rich editor interactions, second-user stored rendering, long delayed execution, browser extensions, and redirect-dependent workflows need manual investigation. A pre-authenticated state may expire. Blocking out-of-scope dependencies can make otherwise valid pages inconclusive. Fresh browser contexts isolate client state, but persistent server-side writes are not automatically rolled back. Use disposable test records and perform approved cleanup.
 
 See the [manual testing checklist](docs/manual-checklist.md) and [finding template](docs/finding-template.md) for triage and reporting.
+
+## Support development
+
+[Sponsor @hareramray on GitHub](https://github.com/sponsors/hareramray). Sponsorships are pending activation of the GitHub Sponsors profile. Bug reports, documentation improvements, and local regression tests are also welcome.
