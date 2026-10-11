@@ -1,0 +1,110 @@
+{
+  "scope": [
+    "http://127.0.0.1:8765/"
+  ],
+  "payloads": [
+    "html_svg"
+  ],
+  "headers": {},
+  "limits": {
+    "request_spacing_ms": 25,
+    "timeout_ms": 5000,
+    "observation_ms": 200,
+    "max_requests": 100,
+    "max_probes": 30,
+    "max_redirects": 5
+  },
+  "cases": [
+    {
+      "name": "Reflected HTML",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/reflect",
+      "parameter": "q",
+      "payloads": [
+        "html_svg"
+      ]
+    },
+    {
+      "name": "Quoted attribute",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/attribute",
+      "parameter": "q",
+      "payloads": [
+        "attribute_double"
+      ]
+    },
+    {
+      "name": "JavaScript string",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/javascript",
+      "parameter": "q",
+      "payloads": [
+        "js_single"
+      ]
+    },
+    {
+      "name": "DOM fragment",
+      "type": "fragment",
+      "url": "http://127.0.0.1:8765/dom",
+      "payloads": [
+        "html_svg"
+      ]
+    },
+    {
+      "name": "URL encoded POST",
+      "type": "form_post",
+      "url": "http://127.0.0.1:8765/form",
+      "parameter": "q",
+      "data": {}
+    },
+    {
+      "name": "JSON POST",
+      "type": "json_post",
+      "url": "http://127.0.0.1:8765/json",
+      "property": "q",
+      "data": {
+        "q": ""
+      }
+    },
+    {
+      "name": "Browser form",
+      "type": "browser_form",
+      "url": "http://127.0.0.1:8765/form",
+      "field_selector": "#q",
+      "submit_selector": "#send"
+    },
+    {
+      "name": "Stored with shared cookies",
+      "type": "stored",
+      "submission_type": "form_post",
+      "url": "http://127.0.0.1:8765/stored",
+      "parameter": "q",
+      "verification_urls": [
+        "http://127.0.0.1:8765/stored/view"
+      ]
+    },
+    {
+      "name": "Escaped HTML control",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/safe/escaped",
+      "parameter": "q"
+    },
+    {
+      "name": "textContent control",
+      "type": "fragment",
+      "url": "http://127.0.0.1:8765/safe/text"
+    },
+    {
+      "name": "JSON response control",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/safe/json",
+      "parameter": "q"
+    },
+    {
+      "name": "CSP control",
+      "type": "query",
+      "url": "http://127.0.0.1:8765/safe/csp",
+      "parameter": "q"
+    }
+  ]
+}

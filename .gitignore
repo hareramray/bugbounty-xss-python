@@ -1,0 +1,39 @@
+# Python and build products
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# Credentials and private target configuration
+.env
+.env.*
+!.env.example
+credentials/
+secrets/
+auth/
+storage-state*.json
+storage_state*.json
+*.storage-state.json
+*.auth.json
+local-configs/
+config.local.json
+*.local.json
+
+# Reports can contain authenticated response excerpts
+reports/
+artifacts/
+playwright-report/
+test-results/
+
+# Editor/OS local state
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

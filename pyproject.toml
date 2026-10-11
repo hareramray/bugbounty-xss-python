@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bugbounty-xss-python"
+version = "0.1.0"
+description = "Scoped, marker-based XSS verification for authorized testing"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["playwright>=1.48,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2"]
+
+[project.scripts]
+xss-suite = "xss_suite.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["xss_suite*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = ["browser: uses installed local Chromium against loopback fixtures"]

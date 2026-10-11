@@ -1,0 +1,35 @@
+{
+  "scope": [
+    "https://your-authorized-host.example/app/"
+  ],
+  "payloads": [
+    "html_svg",
+    "attribute_double",
+    "js_single"
+  ],
+  "headers": {},
+  "limits": {
+    "request_spacing_ms": 250,
+    "timeout_ms": 10000,
+    "observation_ms": 500,
+    "max_requests": 100,
+    "max_probes": 30,
+    "max_redirects": 5
+  },
+  "cases": [
+    {
+      "name": "Authorized search",
+      "type": "query",
+      "url": "https://your-authorized-host.example/app/search",
+      "parameter": "q"
+    },
+    {
+      "name": "DOM fragment",
+      "type": "fragment",
+      "url": "https://your-authorized-host.example/app/view",
+      "payloads": [
+        "html_svg"
+      ]
+    }
+  ]
+}
